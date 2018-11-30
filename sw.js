@@ -7,8 +7,8 @@ const CACHE_NAME = 'oreka-cache-v1',
     './style.css',
     './script.js',
     './favicon.ico',
-    './assets/img/logo-w.svg',
-    './icon_128x128.jpeg',
+    './assets/img/edgram-logo.png',
+    './icon_192x192.png',
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
   ]
 
@@ -54,7 +54,7 @@ self.addEventListener('fetch', e => {
   e.respondWith(
     //Miramos si la petición coincide con algún elemento del cache
     caches.match(e.request)
-      .then(res => {
+    .then(res => {
         console.log('Recuperando cache')
         if ( res ) {
           //Si coincide lo retornamos del cache
@@ -72,17 +72,27 @@ self.addEventListener('push', e => {
   let title = 'Push Notificación Demo',
     options = {
       body: 'Click para regresar a la aplicación',
-      icon: './img/icon_192x192.png',
+      icon: './icon_192x192.png',
       vibrate: [100, 50, 100],
       data: { id: 1 },
       actions: [
-        { 'action': 'Si', 'title': 'Amo esta aplicación :)', icon: './img/icon_192x192.png' },
-        { 'action': 'No', 'title': 'No me gusta esta aplicación :(', icon: './img/icon_192x192.png' }
+        { 'action': 'Si', 'title': 'Amo esta aplicación :)', icon: './icon_192x192.png' },
+        { 'action': 'No', 'title': 'No me gusta esta aplicación :(', icon: './icon_192x192.png' }
       ]
     }
 
     e.waitUntil( self.registration.showNotification(title, options) )
 })
 
+self.addEventListener('notificationclick', e => {
+  console.log(e)
 
+  if ( e.action === 'Si' ) {
+    console.log('AMO esta aplicación')
+    clients.openWindow('https://www.orekaconsultores.com')
+  } else if ( e.action === 'No' ) {
+    console.log('No me gusta esta aplicación')
+  }
 
+  e.notification.close()
+})
