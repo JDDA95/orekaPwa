@@ -7,7 +7,7 @@ const CACHE_NAME = 'oreka-cache-v1',
     './style.css',
     './script.js',
     './favicon.ico',
-    './assets/img/edgram-logo.png',
+    './assets/img/logo-w.svg',
     './icon_192x192.png',
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
   ]
