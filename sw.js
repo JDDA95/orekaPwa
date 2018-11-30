@@ -1,4 +1,4 @@
-const CACHE_NAME = 'oreka-cache-v1',
+const CACHE_NAME = 'oreka-cache-v2',
   urlsToCache = [
     './',
     './?utm=homescreen',
