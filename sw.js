@@ -1,4 +1,4 @@
-const CACHE_NAME = 'oreka-cache-v2',
+const CACHE_NAME = 'oreka-cache-v1',
   urlsToCache = [
     './',
     './?utm=homescreen',
@@ -7,7 +7,7 @@ const CACHE_NAME = 'oreka-cache-v2',
     './style.css',
     './script.js',
     './favicon.ico',
-    './assets/img/logo-w.svg',
+    './assets/img/edgram-logo.png',
     './icon_192x192.png',
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
   ]
